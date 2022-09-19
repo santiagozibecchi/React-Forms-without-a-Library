@@ -3,23 +3,60 @@ import "./App.css";
 import FormInput from "./components/FormInput";
 
 function App() {
-   //    const [username, setUsername] = useState("");
+   const [values, setValues] = useState({
+      username: "",
+      email: "",
+      birthday: "",
+      password: "",
+      confirmPassword: "",
+   });
 
-   console.log("re-rendered");
+   const inputs = [
+      {
+         id: 1,
+         name: "username",
+         type: "text",
+         placeholder: "Username",
+         label: "Username",
+      },
+      {
+         id: 2,
+         name: "email",
+         type: "text",
+         placeholder: "Email",
+         label: "Email",
+      },
+      {
+         id: 3,
+         name: "birthday",
+         type: "text",
+         placeholder: "Birthday",
+         label: "Birthday",
+      },
+      {
+         id: 4,
+         name: "password",
+         type: "password",
+         placeholder: "Password",
+         label: "Password",
+      },
+      {
+         id: 5,
+         name: "confirmPassword",
+         type: "password",
+         placeholder: "Confirm your password",
+         label: "ConfirmPassword",
+      },
+   ];
 
    const handleSubmit = (e) => {
       e.preventDefault();
-      const data = new FormData(e.target);
-      console.log(Object.fromEntries(data.entries()));
    };
 
    return (
       <div className="app">
          <form onSubmit={handleSubmit}>
             <FormInput name="Username" placeholder="Username" />
-            <FormInput name="Email" placeholder="Email" />
-            <FormInput name="Full Name" placeholder="Full Name" />
-            <FormInput name="Other" placeholder="Other" />
             <button>Submit</button>
          </form>
       </div>
