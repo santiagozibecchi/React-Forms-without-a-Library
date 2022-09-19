@@ -61,7 +61,7 @@ function App() {
       });
    };
 
-   //    console.log(values);
+   // console.log(values);
 
    return (
       <div className="app">
@@ -71,8 +71,8 @@ function App() {
                   key={input.id}
                   // * spread operator: paso a la prop todos las propiedades/valor que contiene el input
                   {...input}
-                  // * Accedo a los valores de cada una de las propiedades del state y mando por props al componente
-                  // * itera el name de cada input y como cada propiedad del state(values) coincide con name, logramos acceder al valor de cada una de ellas
+                  // * Creo una nueva propiedad "VALUE" PARA EL INPUT, que paso por prop, a esta se le asigna el valor de entrada del input
+                  // * itera el name de cada input y como cada propiedad del state(values) coincide con name, logramos acceder al valor INDIVIDUAL de cada una de ellas
                   value={values[input.name]}
                   onChange={onChange}
                />

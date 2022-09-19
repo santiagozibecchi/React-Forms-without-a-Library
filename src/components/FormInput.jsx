@@ -4,7 +4,7 @@ import "./FormInput.css";
 const FormInput = (props) => {
    const { id, label, onChange, ...inputProps } = props;
 
-   // * inputProps => name, placeholder, type, value
+   // * ...inputProps => name, placeholder, type, value
    // * Ejemplo: console.log()
    /*{
         name: "username"
