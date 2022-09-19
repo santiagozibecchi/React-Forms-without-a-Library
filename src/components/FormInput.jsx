@@ -4,6 +4,17 @@ import "./FormInput.css";
 const FormInput = (props) => {
    const { id, label, onChange, ...inputProps } = props;
 
+   // * inputProps => name, placeholder, type, value
+   // * Ejemplo: console.log()
+   /*{
+        name: "username"
+        placeholder: "Username"
+        type: "text"
+        value: ""
+    }*/
+
+   console.log(inputProps);
+
    return (
       <div className="formInput">
          <label>{label}</label>

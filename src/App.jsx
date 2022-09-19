@@ -53,6 +53,7 @@ function App() {
       e.preventDefault();
    };
 
+   // * Capturo el evento de cada uno de los inputs del formulario, de tal forma que accedo al name propio iterado de cada input, asignandole el valor de entrada correspondiente. Actualizo el estado(values)
    const onChange = (e) => {
       setValues({
          ...values,
@@ -60,7 +61,7 @@ function App() {
       });
    };
 
-   console.log(values);
+   //    console.log(values);
 
    return (
       <div className="app">
@@ -71,6 +72,7 @@ function App() {
                   // * spread operator: paso a la prop todos las propiedades/valor que contiene el input
                   {...input}
                   // * Accedo a los valores de cada una de las propiedades del state y mando por props al componente
+                  // * itera el name de cada input y como cada propiedad del state(values) coincide con name, logramos acceder al valor de cada una de ellas
                   value={values[input.name]}
                   onChange={onChange}
                />
