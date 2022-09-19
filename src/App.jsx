@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import FormInput from "./components/FormInput";
 
@@ -53,11 +53,29 @@ function App() {
       e.preventDefault();
    };
 
+   const onChange = (e) => {
+      setValues({
+         ...values,
+         [e.target.name]: e.target.value,
+      });
+   };
+
+   console.log(values);
+
    return (
       <div className="app">
          <form onSubmit={handleSubmit}>
-            <FormInput name="Username" placeholder="Username" />
-            <button>Submit</button>
+            {inputs.map((input) => (
+               <FormInput
+                  key={input.id}
+                  // * spread operator: paso a la prop todos las propiedades/valor que contiene el input
+                  {...input}
+                  // * Accedo a los valores de cada una de las propiedades del state y mando por props al componente
+                  value={values[input.name]}
+                  onChange={onChange}
+               />
+            ))}
+            <button type="submit">Submit</button>
          </form>
       </div>
    );
