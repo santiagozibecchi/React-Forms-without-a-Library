@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./App.css";
 import FormInput from "./components/FormInput";
+import "./App.css";
 
 function App() {
    const [values, setValues] = useState({
@@ -66,6 +66,7 @@ function App() {
    return (
       <div className="app">
          <form onSubmit={handleSubmit}>
+            <h1>Register</h1>
             {inputs.map((input) => (
                <FormInput
                   key={input.id}
