@@ -20,14 +20,18 @@ function App() {
             "Username should be 3-16 characters and shouldn't include any special character!",
          placeholder: "Username",
          label: "Username",
+         // pattern -> codigo de etiqueta HTML permite solo lo que coincida, caso contrario
+         pattern: "^[A-Za-z0-9]{3,16}$",
+         required: true,
       },
       {
          id: 2,
          name: "email",
-         type: "text",
+         type: "email",
          errorMessage: "It should be a valid email address",
          placeholder: "Email",
          label: "Email",
+         required: true,
       },
       {
          id: 3,
@@ -45,6 +49,8 @@ function App() {
             "Password should be 8-20 character and include at least 1 letter, 1 number, and 1 special character",
          placeholder: "Password",
          label: "Password",
+         pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+         required: true,
       },
       {
          id: 5,
@@ -53,6 +59,8 @@ function App() {
          errorMessage: "Password don't match",
          placeholder: "Confirm your password",
          label: "ConfirmPassword",
+         pattern: values.password,
+         required: true,
       },
    ];
 
